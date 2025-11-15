@@ -123,13 +123,9 @@ Planned features include:
 ---
 
 📸 **7. UI Preview**
-
-(Add screenshots here)
-
-Example:
-
-
----
+https://github.com/Shyam-Bhatt/the-Fixify/blob/main/Screenshot%202025-11-15%20135037.png
+https://github.com/Shyam-Bhatt/the-Fixify/blob/main/Screenshot%202025-11-15%20135057.png
+https://github.com/Shyam-Bhatt/the-Fixify/blob/main/Screenshot%202025-11-15%20135116.png
 
 🎯 **8. Project Goal**
 
