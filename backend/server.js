@@ -15,11 +15,11 @@ const Product = require('./models/Product');
 const app = express();
 const PORT = process.env.PORT || 8020;
 
-// ✅ Middleware
+// Middleware
 app.use(cors());
 app.use(express.json());
 
-// ✅ MongoDB Atlas Connection
+// MongoDB Atlas Connection
 mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -27,12 +27,12 @@ mongoose.connect(process.env.MONGO_URI, {
     .then(() => console.log('✅ MongoDB Atlas Connected Successfully'))
     .catch(err => console.error('❌ MongoDB Connection Failed:', err));
 
-// ✅ Health Check Route
+// Health Check Route
 app.get('/', (req, res) => {
     res.send({ status: 1, message: 'Backend running with MongoDB Atlas' });
 });
 
-// ✅ Routes
+// Offers Route
 app.get('/api/offers', async (req, res) => {
     try {
         const data = await Offer.find();
@@ -42,6 +42,7 @@ app.get('/api/offers', async (req, res) => {
     }
 });
 
+// Products Route
 app.get('/api/products', async (req, res) => {
     try {
         const { limit } = req.query;
@@ -53,12 +54,12 @@ app.get('/api/products', async (req, res) => {
     }
 });
 
-// ✅ Feature, Service, Feedback, About, Contact Routes
+// Other Routes
 app.use('/api/features', featureRoute);
 app.use('/api/services', serviceRoute);
 app.use('/api/feedback', feedbackRoute);
 app.use('/api/about', aboutRoute);
 app.use('/api/contact', contactRoute);
 
-// ✅ Start Server
-app.listen(PORT, () => console.log(`🚀 Server running at http://localhost:${PORT}`));
+// Start Server
+app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
