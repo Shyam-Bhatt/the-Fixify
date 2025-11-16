@@ -9,8 +9,9 @@ const featureRoute = require('./routes/featureRoute');
 const serviceRoute = require("./routes/serviceRoute");
 const feedbackRoute = require("./routes/feedbackRoute");
 
-const Offer = require('./models/Offer');
-const Product = require('./models/Product');
+const Offer = require('./models/Offer.js');
+const Product = require('./models/Product.js');
+
 
 const app = express();
 const PORT = process.env.PORT || 8020;
